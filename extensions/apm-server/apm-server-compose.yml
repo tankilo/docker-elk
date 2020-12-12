@@ -17,7 +17,6 @@ services:
         read_only: true
     ports:
       - '8200:8200'
-    networks:
-      - elk
+    network_mode: "host"
     depends_on:
       - elasticsearch

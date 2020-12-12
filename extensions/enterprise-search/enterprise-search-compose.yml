@@ -16,7 +16,6 @@ services:
       ENT_SEARCH_DEFAULT_PASSWORD: changeme
     ports:
       - '3002:3002'
-    networks:
-      - elk
+    network_mode: "host"
     depends_on:
       - elasticsearch

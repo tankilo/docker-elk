@@ -14,7 +14,6 @@ services:
         source: ./extensions/curator/config/delete_log_files_curator.yml
         target: /usr/share/curator/config/delete_log_files_curator.yml
         read_only: true
-    networks:
-      - elk
+    network_mode: "host"
     depends_on:
       - elasticsearch

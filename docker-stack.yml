@@ -18,8 +18,7 @@ services:
       discovery.type: single-node
       # Force publishing on the 'elk' overlay.
       network.publish_host: _eth0_
-    networks:
-      - elk
+    network_mode: "host"
     deploy:
       mode: replicated
       replicas: 1
@@ -37,8 +36,7 @@ services:
         target: /usr/share/logstash/pipeline/logstash.conf
     environment:
       LS_JAVA_OPTS: "-Xmx256m -Xms256m"
-    networks:
-      - elk
+    network_mode: "host"
     deploy:
       mode: replicated
       replicas: 1
@@ -50,8 +48,7 @@ services:
     configs:
       - source: kibana_config
         target: /usr/share/kibana/config/kibana.yml
-    networks:
-      - elk
+    network_mode: "host"
     deploy:
       mode: replicated
       replicas: 1

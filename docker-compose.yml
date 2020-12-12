@@ -11,7 +11,7 @@ services:
         source: ./elasticsearch/config/elasticsearch.yml
         target: /usr/share/elasticsearch/config/elasticsearch.yml
         read_only: true
-      - type: volume
+      - type: bind
         source: /lvdata/es_data
         target: /usr/share/elasticsearch/data
     ports:
